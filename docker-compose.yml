@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  sonarqube:
+    image: sonarqube:lts
+    container_name: sonar2
+    stdin_open: true
+    tty: true
+    ports:
+      - "9001:9000"
+    volumes:
+      - ./repositories:/opt/sonarqube/repositories
+
+volumes:
+    repositories:
