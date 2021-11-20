@@ -27,7 +27,7 @@ docker compose up -d
 
 ```sh
 # コンテナに接続
-docker exec -it -u root sonar2 bash
+docker compose exec sonarqube bash
 
 apk add wget unzip vim git
 # JS, TSの解析は以下も必要
@@ -53,6 +53,14 @@ source ~/.bashrc
 ```
 
 ### コード解析の実行
+
+```sh
+# コンテナに接続
+docker compose exec sonarqube bash
+
+# 解析したいリポジトリのルートへ移動
+cd repositories/xxxx
+```
 
 SonarQubeの管理画面で"Add Project"して進む画面に以下のようなコマンドが表示されるので、それを実行する。
 

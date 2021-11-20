@@ -3,7 +3,6 @@ version: '3'
 services:
   sonarqube:
     image: sonarqube:lts
-    container_name: sonar2
     stdin_open: true
     tty: true
     ports:
