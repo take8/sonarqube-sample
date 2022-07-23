@@ -1,8 +1,15 @@
-FROM sonarqube:lts
+# FROM sonarqube:lts
 
-RUN apk add wget unzip vim git
+# RUN apk add wget unzip vim git
+# # JS, TSの解析は以下も必要
+# RUN apk add nodejs npm
+
+FROM hub4rpi64/sonarqube:8.3.1.34397
+
+RUN apt-get update --allow-releaseinfo-change
+RUN apt-get install -y wget vim git
 # JS, TSの解析は以下も必要
-RUN apk add nodejs npm
+RUN apt-get install -y nodejs npm
 
 WORKDIR /opt/sonarqube
 
